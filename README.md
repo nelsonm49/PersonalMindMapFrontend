@@ -16,8 +16,8 @@ This is the **frontend** for the PersonalMindMap project, built with [Next.js](h
 
     ```
     NEXT_PUBLIC_API_URL_LOCAL=http://localhost:3001/api
-    NEXT_PUBLIC_API_URL_DEV=https://dev.personalmindmap.com/api
-    NEXT_PUBLIC_API_URL_PROD=https://www.personalmindmap.com/api
+    NEXT_PUBLIC_API_URL_DEV=http://3.19.66.169:3001/api
+    NEXT_PUBLIC_API_URL_PROD=http://3.138.85.53:3001/api
     ```
 
     The app will automatically select the correct backend API URL based on where it is running:

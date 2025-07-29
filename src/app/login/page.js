@@ -8,14 +8,14 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false); // <-- Add loading state
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
   async function handleLogin(e) {
     e.preventDefault();
     setError('');
-    setLoading(true); // <-- Set loading to true
+    setLoading(true);
 
     try {
       const res = await fetch(`${apiUrl}/login`, {
@@ -40,7 +40,7 @@ export default function LoginPage() {
         }
       }
     } finally {
-      setLoading(false); // <-- Set loading to false
+      setLoading(false);
     }
   }
 
