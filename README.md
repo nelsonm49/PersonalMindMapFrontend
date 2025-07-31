@@ -41,7 +41,8 @@ This is the **frontend** for the PersonalMindMap project, built with [Next.js](h
     npm run build
     ```
 
-    This will generate an `out` directory containing your static site.
+    This will generate an `out` directory containing your static site.  
+    **Note:** After building, route files (like `login.html`) will automatically have their `.html` extensions removed by a post-build script `remove-html-extension.js`. CloudFront searches for objects/files by exact names. This ensures CloudFront/S3 can serve pretty URLs (e.g., `/login` instead of `/login.html`) without manual removing extensions.
 
 5. **Deploying to Dev or Production:**
 

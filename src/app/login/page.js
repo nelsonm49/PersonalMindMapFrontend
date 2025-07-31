@@ -39,6 +39,8 @@ export default function LoginPage() {
           setError(err.message);
         }
       }
+    } catch (err) {
+      setError('Network error: Unable to reach the server: ' + err.message);
     } finally {
       setLoading(false);
     }

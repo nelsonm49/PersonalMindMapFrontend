@@ -29,32 +29,32 @@ export default function SignUpPage() {
 
         setError('');
 
-        const res = await fetch(`${apiUrl}/signup`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                firstName,
-                lastName,
-                email,
-                password
-            })
-        });
+        try {
+            const res = await fetch(`${apiUrl}/signup`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    firstName,
+                    lastName,
+                    email,
+                    password
+                })
+            });
 
-        if (res.ok) {
-            const data = await res.json();
-            // Store user in localStorage
-            localStorage.setItem('user', JSON.stringify(data.user));
-            router.push('/mindmap');
-        } else if (res.status === 503) {
-            const data = await res.json();
-            setError(data.message);
-        } else {
-            try {
+            if (res.ok) {
                 const data = await res.json();
-                setError(data.message);
-            } catch (err) {
-                setError(err.message);
+                localStorage.setItem('user', JSON.stringify(data.user));
+                router.push('/mindmap');
+            } else {
+                try {
+                    const data = await res.json();
+                    setError(data.message);
+                } catch (err) {
+                    setError(err.message);
+                }
             }
+        } catch (err) {
+            setError('Network error: Unable to reach the server.');
         }
     }
 
