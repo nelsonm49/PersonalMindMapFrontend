@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node remove-html-extension.js",
+    "build": "next build",
     "export": "next export"
   },
   "dependencies": {
