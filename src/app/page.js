@@ -72,7 +72,7 @@ export default function LandingPage() {
         <div style={{ flex: 1, textAlign: 'center', color: '#353b48' }}>
           <strong>Contact Us</strong>
           <div style={{ marginTop: '.5rem' }}>
-            <div>Email: <a href="mailto:support@personalmindmap.com" style={{ color: '#273c75' }}>support@personalmindmap.com</a></div>
+            <div>Email: <a href="mailto:personalmindmap@gmail.com" style={{ color: '#273c75' }}>personalmindmap@gmail.com</a></div>
             <div>LinkedIn: <a href="https://linkedin.com/company/personalmindmap" target="_blank" rel="noopener noreferrer" style={{ color: '#273c75' }}>PersonalMindMap</a></div>
             <div>Phone: <a href="tel:+1234567890" style={{ color: '#273c75' }}>+1 (234) 567-890</a></div>
           </div>
