@@ -46,31 +46,6 @@ export default function LoginPage() {
     }
   }
 
-  async function go() {
-    const res = await fetch(`${apiUrl}/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: process.env.NEXT_PUBLIC_ADMIN_EMAIL,
-        password: process.env.NEXT_PUBLIC_ADMIN_PASSWORD
-      })
-    });
-
-    if (res.ok) {
-      const data = await res.json();
-      localStorage.setItem('user', JSON.stringify(data.user));
-      router.push('/mindmap');
-    } else {
-      try {
-        const data = await res.json();
-        setError(data.message);
-      } catch (err) {
-        setError(err.message);
-      }
-    }
-  }
-  // go();
-
   function goHome() {
     router.push('/');
   }
